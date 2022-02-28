@@ -3,7 +3,7 @@ class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         # nlog(n) + 2**n, n is the size of candidates
 
-        cnadidates = candidates.sort()  # nlog(n)
+        candidates.sort()  # nlog(n)
 
         res = []
 

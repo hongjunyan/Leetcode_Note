@@ -9,4 +9,6 @@
 * `backtracking` \
 [39.Combination Sum.py](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/39.Combination%20Sum) [<span style="color:orange">M</span>] \
 [40.Combination Sum II](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/40.Combination%20Sum%20II) [<span style="color:orange">M</span>] \
-[51.N-Queens](https://github.com/hongjunyan/Leetcode_Notge/tree/master/dfs/51.N-Queens) [<span style="color:orange">M</span>] \
+[46.Permutations]() [<span style="color:orange">M</span>] \
+[47.Permutations II]() [<span style="color:orange">M</span>] \
+[51.N-Queens](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/51.N-Queens) [<span style="color:red">H</span>]
