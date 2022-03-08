@@ -8,7 +8,8 @@
 
 ## [DFS](./DFS)
 [207.Course Schedule]() [<span style="color:orange">M</span>] \
-[210.Course Schedule II]() [<span style="color:orange">M</span>]
+[210.Course Schedule II]() [<span style="color:orange">M</span>] \
+[200.Number of Islands]() (also used bfs)[<span style="color:orange">M</span>]
 
 * `backtracking` \
 [39.Combination Sum.py](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/39.Combination%20Sum) [<span style="color:orange">M</span>] \
