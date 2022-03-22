@@ -1,3 +1,4 @@
+import collections
 from typing import List
 
 
@@ -27,6 +28,62 @@ class Solution:
                     islands += 1
         return islands
 
+    def closedIsland_dfs_with_condition(self, grid: List[List[int]]) -> int:
+        rows, cols = len(grid), len(grid[0])
+
+        islands = 0
+        directions = ((0, -1), (0, 1), (-1, 0), (1, 0))
+
+        def dfs(row, col, isclosed):
+            grid[row][col] = -1
+            for dr, dc in directions:
+                r, c = row + dr, col + dc
+                if r in range(rows) and c in range(cols) and grid[r][c] == 0:
+                    isclosed = dfs(r, c, isclosed)
+
+            # 如果不要這行條件判斷，就是leetcode 200
+            if row == 0 or col == 0 or row == rows - 1 or col == cols - 1:
+                return False
+
+            return isclosed
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 0:
+                    if dfs(r, c, True):
+                        islands += 1
+        return islands
+
+    def closedIsland_bfs(self, grid: List[List[int]]) -> int:
+        rows, cols = len(grid), len(grid[0])
+
+        islands = 0
+        directions = ((0, -1), (0, 1), (-1, 0), (1, 0))
+
+        def bfs(r: int, c: int) -> bool:
+            q = collections.deque()
+            grid[r][c] = -1
+            q.append((r, c))
+            isclosed = True
+
+            while q:
+                row, col = q.popleft()  # 如果要改成dfs，只要改成q.pop()
+                for dr, dc in directions:
+                    r, c = row + dr, col + dc
+                    if r in range(rows) and c in range(cols) and grid[r][c] == 0:
+                        grid[r][c] = -1
+                        q.append((r, c))
+
+                if isclosed and (row == 0 or col == 0 or row == rows - 1 or col == cols - 1):
+                    isclosed = False
+            return isclosed
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 0:
+                    if bfs(r, c):
+                        islands += 1
+        return islands
 
 def unit_test(func):
     grid1 = [
@@ -65,4 +122,5 @@ def unit_test(func):
 if __name__ == "__main__":
     sol = Solution()
     unit_test(sol.closedIsland)
-    # TODO method2
+    unit_test(sol.closedIsland_dfs_with_condition)
+    unit_test(sol.closedIsland_bfs)
