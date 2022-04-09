@@ -1,46 +1,69 @@
 from typing import List
+
+
 class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        # nlog(n) + 2**n, n is the size of candidates
-
-        cnadidates = candidates.sort()  # nlog(n)
-
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        visited_col = set()
+        visited_posdiag = set()
+        visited_negdiag = set()
         res = []
+        board = [["."] * n for r in range(n)]
 
-        def dfs(idx: int, cur: list, cur_sum):
-            if cur_sum == target:
-                res.append(cur.copy())
+        def is_not_under_attack(r, c):
+            if c not in visited_col and \
+                    (r + c) not in visited_posdiag and \
+                    (r - c) not in visited_negdiag:
+                return True
+            return False
+
+        def place_queen(r, c):
+            # explore this partial candidate solution,
+            board[r][c] = "Q"
+
+            # mark the attacking zone
+            visited_col.add(c)
+            visited_posdiag.add(r + c)
+            visited_negdiag.add(r - c)
+
+        def remove_queen(r, c):
+            board[r][c] = "."
+            visited_col.remove(c)
+            visited_posdiag.remove(r + c)
+            visited_negdiag.remove(r - c)
+
+        def backtrack(r: int):
+            if r == n:
+                # we reach the bottom, i.e. we find a solution!
+                sol = ["".join(row) for row in board]
+                res.append(sol)
                 return
-            if cur_sum > target or idx >= len(candidates):
-                return
 
-            pres = None
-            for i in range(idx, len(candidates)):
-                cand = candidates[i]
-                if cand == pres:
-                    continue
+            for c in range(n):
+                if is_not_under_attack(r, c):
+                    # place_queen
+                    place_queen(r, c)
 
-                cur.append(cand)
-                dfs(i + 1, cur, cur_sum + cand)
-                cur.pop()
-                pres = cand
+                    # we move on to the next row
+                    backtrack(r + 1)
 
-        dfs(0, [], 0)
+                    # backtrack, i.e. remove the queen and remove the attacking zone.
+                    remove_queen(r, c)
+
+        backtrack(0)
         return res
-
 
 def unit_test(func):
 
-    testcase = [(([10,1,2,7,6,1,5], 8), [[1,1,6],[1,2,5],[1,7],[2,6]]),
-                (([2,5,2,1,2], 5), [[1,2,2],[5]]),
+    testcase = [(4, [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]),
+                (1, [["Q"]]),
                ]
     for idx, t in enumerate(testcase):
-        res = func(*t[0])
-        pass_flag = res == t[1]
+        res = func(t[0])
+        pass_flag = sorted(res) == sorted(t[1])
         msg = "pass" if pass_flag else f"wrong, expect {t[1]}, but get {res}"
         print(f"Case {idx}: {msg}")
 
 
 if __name__ == "__main__":
     sol = Solution()
-    unit_test(sol.combinationSum2)
+    unit_test(sol.solveNQueens)
