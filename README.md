@@ -14,10 +14,13 @@
 [133.Clone Graph]() [<span style="color:orange">M</span>]
 
 * `backtracking` \
-[78.Subsets]() [<span style="color:orange">M</span>] \
-[90.Subsets II]() [<span style="color:orange">M</span>] \
+[78.Subsets](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/78.Subsets) [<span style="color:orange">M</span>] \
+[90.Subsets II](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/90.Subsets%20II) [<span style="color:orange">M</span>] \
 [39.Combinatio Sum.py](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/39.Combination%20Sum) [<span style="color:orange">M</span>] \
 [40.Combination Sum II](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/40.Combination%20Sum%20II) [<span style="color:orange">M</span>] \
 [46.Permutations](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/46.Permutations) [<span style="color:orange">M</span>] \
 [47.Permutations II](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/47.Permutations%20II) [<span style="color:orange">M</span>] \
-[51.N-Queens](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/51.N-Queens) [<span style="color:red">H</span>]
+[51.N-Queens](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/51.N-Queens) [<span style="color:red">H</span>] \
+[52.N-Queens](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/52.N-Queens) [<span style="color:red">H</span>] \
+[17.Letter Combinations of a Phone Number]()[] [<span style="color:orange">M</span>]
+
