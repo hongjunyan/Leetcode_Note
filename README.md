@@ -13,7 +13,19 @@
 [1254.Number of Closed Islands](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/1254.Number%20of%20Closed%20Islands) [<span style="color:orange">M</span>] \
 [133.Clone Graph]() [<span style="color:orange">M</span>]
 
-* `backtracking` \
+
+ `backtracking` \
+```commandline
+Tip for backtracking
+
+cur_list.append(ele)
+backtrack(cur_list)
+cur_list.pop()
+
+simplify the procedure as follow
+
+backtrack(cur_list + [ele])
+```
 [78.Subsets](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/78.Subsets) [<span style="color:orange">M</span>] \
 [90.Subsets II](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/90.Subsets%20II) [<span style="color:orange">M</span>] \
 [39.Combinatio Sum.py](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/39.Combination%20Sum) [<span style="color:orange">M</span>] \
@@ -22,5 +34,7 @@
 [47.Permutations II](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/47.Permutations%20II) [<span style="color:orange">M</span>] \
 [51.N-Queens](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/51.N-Queens) [<span style="color:red">H</span>] \
 [52.N-Queens](https://github.com/hongjunyan/Leetcode_Note/tree/master/dfs/52.N-Queens) [<span style="color:red">H</span>] \
-[17.Letter Combinations of a Phone Number]()[] [<span style="color:orange">M</span>]
-
+[17.Letter Combinations of a Phone Number]() [<span style="color:orange">M</span>] \
+[1980.Find Unique Binary String]()[<span style="color:orange">M</span>] \
+[93.Restore IP Addresses]() [<span style="color:orange">M</span>] \
+[698.Partition to K Equal Sum Subsets]() [<span style="color:orange">M</span>]
