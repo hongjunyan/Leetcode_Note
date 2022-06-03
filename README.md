@@ -38,3 +38,6 @@ backtrack(cur_list + [ele])
 [1980.Find Unique Binary String]()[<span style="color:orange">M</span>] \
 [93.Restore IP Addresses]() [<span style="color:orange">M</span>] \
 [698.Partition to K Equal Sum Subsets]() [<span style="color:orange">M</span>]
+
+## [Linked List](./linked_list)
+[206. Reverse Linked List.py]() [<span style="color:green">E</span>] \
