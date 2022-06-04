@@ -41,4 +41,5 @@ backtrack(cur_list + [ele])
 
 ## [Linked List](./linked_list)
 [206. Reverse Linked List.py]() [<span style="color:green">E</span>] \
-[21. Merge Two Sorted Lists]() [<span style="color:green">E</span>]
+[21. Merge Two Sorted Lists]() [<span style="color:green">E</span>] \
+[24. Swap Nodes in Pairs]() [<span style="color:orange">M</span>]
